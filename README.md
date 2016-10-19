@@ -1,65 +1,102 @@
-Yii Web Programming Framework
-=============================
+Yii 2 Basic Project Template
+============================
 
-Thank you for choosing Yii - a high-performance component-based PHP framework.
+Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
+rapidly creating small projects.
 
-[![Build Status](https://secure.travis-ci.org/yiisoft/yii.png)](http://travis-ci.org/yiisoft/yii)
+The template contains the basic features including user login/logout and a contact page.
+It includes all commonly used configurations that would allow you to focus on adding new
+features to your application.
 
-INSTALLATION
-------------
+[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-app-basic/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
+[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-basic/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
+[![Build Status](https://travis-ci.org/yiisoft/yii2-app-basic.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-basic)
 
-Please make sure the release file is unpacked under a Web-accessible
-directory. You shall see the following files and directories:
+DIRECTORY STRUCTURE
+-------------------
 
-      demos/               demos
-      framework/           framework source files
-      requirements/        requirement checker
-      CHANGELOG            describing changes in every Yii release
-      LICENSE              license of Yii
-      README               this file
-      UPGRADE              upgrading instructions
+      assets/             contains assets definition
+      commands/           contains console commands (controllers)
+      config/             contains application configurations
+      controllers/        contains Web controller classes
+      mail/               contains view files for e-mails
+      models/             contains model classes
+      runtime/            contains files generated during runtime
+      tests/              contains various tests for the basic application
+      vendor/             contains dependent 3rd-party packages
+      views/              contains view files for the Web application
+      web/                contains the entry script and Web resources
+
 
 
 REQUIREMENTS
 ------------
 
-The minimum requirement by Yii is that your Web server supports
-PHP 5.1.0 or above. Yii has been tested with Apache HTTP server
-on Windows and Linux operating systems.
-
-Please access the following URL to check if your Web server reaches
-the requirements by Yii, assuming "YiiPath" is where Yii is installed:
-
-      http://hostname/YiiPath/requirements/index.php
+The minimum requirement by this project template that your Web server supports PHP 5.4.0.
 
 
-QUICK START
------------
+INSTALLATION
+------------
 
-Yii comes with a command line tool called "yiic" that can create
-a skeleton Yii application for you to start with.
+### Install from an Archive File
 
-On command line, type in the following commands:
+Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
+a directory named `basic` that is directly under the Web root.
 
-        $ cd YiiPath/framework                (Linux)
-        cd YiiPath\framework                  (Windows)
+Set cookie validation key in `config/web.php` file to some random secret string:
 
-        $ ./yiic webapp ../testdrive          (Linux)
-        yiic webapp ..\testdrive              (Windows)
+```php
+'request' => [
+    // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+    'cookieValidationKey' => '<secret random string goes here>',
+],
+```
 
-The new Yii application will be created at "YiiPath/testdrive".
-You can access it with the following URL:
+You can then access the application through the following URL:
 
-        http://hostname/YiiPath/testdrive/index.php
-
-
-WHAT'S NEXT
------------
-
-Please visit the project website for tutorials, class reference
-and join discussions with other Yii users.
+~~~
+http://localhost/basic/web/
+~~~
 
 
+### Install via Composer
 
-The Yii Developer Team
-http://www.yiiframework.com
+If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
+at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
+
+You can then install this project template using the following command:
+
+~~~
+php composer.phar global require "fxp/composer-asset-plugin:~1.1.1"
+php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic basic
+~~~
+
+Now you should be able to access the application through the following URL, assuming `basic` is the directory
+directly under the Web root.
+
+~~~
+http://localhost/basic/web/
+~~~
+
+
+CONFIGURATION
+-------------
+
+### Database
+
+Edit the file `config/db.php` with real data, for example:
+
+```php
+return [
+    'class' => 'yii\db\Connection',
+    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'username' => 'root',
+    'password' => '1234',
+    'charset' => 'utf8',
+];
+```
+
+**NOTES:**
+- Yii won't create the database for you, this has to be done manually before you can access it.
+- Check and edit the other files in the `config/` directory to customize your application as required.
+- Refer to the README in the `tests` directory for information specific to basic application tests.
