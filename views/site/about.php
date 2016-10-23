@@ -4,19 +4,16 @@
 
 use yii\helpers\Html;
 
-$this->title = 'About';
+$this->title = 'Moja tablica';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        This is the About page. You may modify the following file to customize its content:
+        Jestem Maciek i mam ajlpa 
     </p>
-    <p>
-        Witaj świecie
-    </p>
-
+    <img src="/images/smiley.gif" alt="Smiley face" width="42" height="42">
 
     <code><?= __FILE__ ?></code>
 </div>

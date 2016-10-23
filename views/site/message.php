@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        Witaj świecie, marcin podaje nowe wiadomosci do naszej wiadomosci
+        Dobrze byłoby przesyłać tutaj wiadomosci do do innych ludzi, jakis zapis do bazy czy cos 
     </p>
 
 
