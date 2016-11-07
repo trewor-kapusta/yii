@@ -13,6 +13,7 @@ $config = [
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
+            'forceCopy' => false
         ],
         'log' => [
             'targets' => [
