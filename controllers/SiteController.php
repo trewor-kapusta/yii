@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\EditUserForm;
 
 class SiteController extends Controller
 {
@@ -137,5 +138,18 @@ class SiteController extends Controller
     public function actionMessage()
     {
         return $this->render('message');
+    }
+
+    public function actionEditUser()
+    {
+        $model = new EditUserForm();
+//        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+//            Yii::$app->session->setFlash('contactFormSubmitted');
+//
+//            return $this->refresh();
+//        }
+        return $this->render('edit_user', [
+            'model' => $model,
+        ]);
     }
 }
