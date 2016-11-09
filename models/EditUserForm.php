@@ -11,6 +11,23 @@ class EditUserForm extends Model
     public $username;
     public $password;
 
+    public function init()
+    {
+        $this->username = Yii::$app->user->identity->username;
+        $this->password = Yii::$app->user->identity->password;
+    }
+
+    public function edit($username, $password)
+    {
+        if ($this->validate()) {
+            $user = User::findOne(Yii::$app->user->id);
+            $user->username = $username;
+            $user->password = $password;
+            $user->update();
+            return $user;
+        }
+    }
+
     /**
      * @return array the validation rules.
      */

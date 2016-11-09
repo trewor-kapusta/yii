@@ -11,10 +11,10 @@ use yii\captcha\Captcha;
 $this->title = 'Edit User';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-contact">
+<div class="user-edit">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?php if (Yii::$app->session->hasFlash('editSubmitted')): ?>
+    <?php if (Yii::$app->session->hasFlash('editFormSubmitted')): ?>
 
         <div class="alert alert-success">
             Done
@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row">
             <div class="col-lg-5">
 
-                <?php $form = ActiveForm::begin(['id' => 'edit-user-form']); ?>
+                <?php $form = ActiveForm::begin(['id' => 'edit-form']); ?>
 
                 <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
 

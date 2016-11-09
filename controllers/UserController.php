@@ -59,6 +59,8 @@ class UserController extends Controller
     {
         $model = new EditUserForm();
         if ($model->load(Yii::$app->request->post())) {
+            $userForm = Yii::$app->request->post("EditUserForm");
+            $model->edit($userForm['username'], $userForm['password']);
             Yii::$app->session->setFlash('editFormSubmitted');
             return $this->refresh();
         }
