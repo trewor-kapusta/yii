@@ -9,12 +9,6 @@ use yii\web\IdentityInterface;
 
 class User extends ActiveRecord implements IdentityInterface
 {
-/*    public $id;
-    public $email;
-    public $password;
-    public $authKey;
-    public $accessToken;*/
-
 
 
     public static function tableName()
