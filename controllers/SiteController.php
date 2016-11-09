@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\EditUserForm;
+use app\models\SignupForm;
 
 class SiteController extends Controller
 {
@@ -24,7 +25,8 @@ class SiteController extends Controller
                 	'index',
                 	'contact',
                 	'message',
-                	'about'
+                	'about',
+                    'edit-user'
                 ],
                 'rules' => [
                     [
@@ -140,6 +142,9 @@ class SiteController extends Controller
         return $this->render('message');
     }
 
+    /**
+     * @return string
+     */
     public function actionEditUser()
     {
         $model = new EditUserForm();
@@ -149,6 +154,21 @@ class SiteController extends Controller
 //            return $this->refresh();
 //        }
         return $this->render('edit_user', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionSignup()
+    {
+        $model = new SignupForm();
+        if ($model->load(Yii::$app->request->post())) {
+            if ($user = $model->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    return $this->goHome();
+                }
+            }
+        }
+        return $this->render('signup', [
             'model' => $model,
         ]);
     }
