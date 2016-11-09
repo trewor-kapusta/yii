@@ -6,10 +6,8 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
 use app\models\EditUserForm;
-use app\models\SignupForm;
+
 
 class UserController extends Controller
 {
@@ -60,12 +58,11 @@ class UserController extends Controller
     public function actionEdit()
     {
         $model = new EditUserForm();
-//        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-//            Yii::$app->session->setFlash('contactFormSubmitted');
-//
-//            return $this->refresh();
-//        }
-        return $this->render('edit_user', [
+        if ($model->load(Yii::$app->request->post())) {
+            Yii::$app->session->setFlash('editFormSubmitted');
+            return $this->refresh();
+        }
+        return $this->render('edit', [
             'model' => $model,
         ]);
     }
