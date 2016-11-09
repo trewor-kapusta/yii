@@ -145,19 +145,6 @@ class SiteController extends Controller
     /**
      * @return string
      */
-    public function actionEditUser()
-    {
-        $model = new EditUserForm();
-//        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-//            Yii::$app->session->setFlash('contactFormSubmitted');
-//
-//            return $this->refresh();
-//        }
-        return $this->render('edit_user', [
-            'model' => $model,
-        ]);
-    }
-
     public function actionSignup()
     {
         $model = new SignupForm();
