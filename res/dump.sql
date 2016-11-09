@@ -47,3 +47,13 @@ INSERT INTO `q_user` (`id`, `username`, `authKey`, `password`, `access_token`) V
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+CREATE TABLE `q_board_entries` (
+  `id_board_entry` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `entry` text NOT NULL,
+  PRIMARY KEY (`id_board_entry`),
+  KEY `fk_q_board_entries_1` (`id_user`),
+  CONSTRAINT `fk_q_board_entries_1` FOREIGN KEY (`id_user`) REFERENCES `q_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
