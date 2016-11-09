@@ -37,10 +37,9 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-        	['label' => 'Wiadomosci', 'url' => ['/message/send']],
-        	['label' => 'o nas', 'url' => ['/site/about']],
-            ['label' => 'Kontakt', 'url' => ['/site/contact']],
-            ['label' => 'Profil', 'url' => ['/user/edit']],
+            ['label' => 'Tablica', 'url' => ['/site/board']],
+            ['label' => 'Wiadomosci', 'url' => ['/message/send']],
+            ['label' => 'Edytuj profil', 'url' => ['/user/edit']],
             ['label' => 'Zarejestruj', 'url' => ['/user/signup']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
