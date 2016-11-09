@@ -9,11 +9,11 @@ use yii\web\IdentityInterface;
 
 class User extends ActiveRecord implements IdentityInterface
 {
-    public $id;
+/*    public $id;
     public $email;
     public $password;
     public $authKey;
-    public $accessToken;
+    public $accessToken;*/
 
 
 
