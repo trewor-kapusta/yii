@@ -37,7 +37,7 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-        	['label' => 'Wiadomosci', 'url' => ['/site/message']],
+        	['label' => 'Wiadomosci', 'url' => ['/message/send']],
         	['label' => 'o nas', 'url' => ['/site/about']],
             ['label' => 'Kontakt', 'url' => ['/site/contact']],
             ['label' => 'Profil', 'url' => ['/user/edit']],

@@ -142,15 +142,6 @@ class SiteController extends Controller
         return $this->render('board');
     }
 
-    /**
-     * Displays message page.
-     *
-     * @return string
-     */
-    public function actionMessage()
-    {
-        return $this->render('message');
-    }
 
     /**
      * @return string
