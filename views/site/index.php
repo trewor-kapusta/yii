@@ -17,7 +17,7 @@ $this->title = 'Portal społecznosciowy';
         <div class="row">
             <div class="col-lg-4">               
                 <p><a class="btn btn-default" href='index.php?r=site%2Fmessage'>Wiadomości &raquo;</a></p>
-                <p><a class="btn btn-default" href='index.php?r=site%2Fabout'>Moja tablica &raquo;</a></p>
+                <p><a class="btn btn-default" href='index.php?r=site%2Fboard'>Moja tablica &raquo;</a></p>
                 <p><a class="btn btn-default" href='index.php?r=site%2Fcontact'>Kontakt &raquo;</a></p>
                 <p><a class="btn btn-default" href='index.php?r=site%2Flogin'>Login &raquo;</a></p>
 			</div>
