@@ -131,6 +131,17 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+       /**
+     * Displays about page.
+     *
+     * @return string
+     */
+    public function actionBoard()
+    {
+
+        return $this->render('board');
+    }
+
     /**
      * Displays message page.
      *
