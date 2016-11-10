@@ -35,6 +35,7 @@ class Message extends ActiveRecord
 		$cmd = $query->createCommand();
 		return $cmd->queryAll();
 	}
+
 }
 
 ?>

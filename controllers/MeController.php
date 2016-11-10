@@ -6,13 +6,13 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-use app\models\Message;
+use app\models\Me;
 
 
 use yii\helpers\Json;
 use app\models\Board;
 
-class MessageController extends Controller
+class MeController extends Controller
 {
     /**
      * @inheritdoc
@@ -56,12 +56,14 @@ class MessageController extends Controller
      */
     public function actionSend()
     {
-        $model = new Message();
-//        $json = new Json();
-//        $this->view->params['boardMessages'] =
-//            $json->encode($model->getMessages(Yii::$app->request->get('last_msg')));
+        $model = new Me();
 
-
+        if ($model->load(Yii::$app->request->post())) {
+            $userForm = Yii::$app->request->post("Me");
+            $model->edit($userForm['me']);
+            Yii::$app->session->setFlash('editFormSubmitted');
+            return $this->refresh();
+        }
 
         return $this->render('message', [
             'model' => $model,
