@@ -61,7 +61,6 @@ class MeController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $userForm = Yii::$app->request->post("Me");
             $model->edit($userForm['me']);
-            Yii::$app->session->setFlash('editFormSubmitted');
             return $this->refresh();
         }
 

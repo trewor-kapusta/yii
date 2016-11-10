@@ -11,11 +11,6 @@ use yii\db\Query;
 
 class User extends ActiveRecord implements IdentityInterface
 {
-    public $me;
-    public function init()
-    {
-        $this->me = Yii::$app->user->identity->me;
-    }
 
     public static function tableName()
     {
